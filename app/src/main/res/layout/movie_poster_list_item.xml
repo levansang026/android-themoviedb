@@ -17,6 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clipChildren="false"
         >
 
         <TextView
@@ -44,7 +45,8 @@
             app:posterMovieList="@{movies}"
             tools:listitem="@layout/movie_poster_item"
             android:clipToPadding="false"
-            android:paddingHorizontal="16dp"/>
+            android:paddingHorizontal="16dp"
+            android:clipChildren="false"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -17,8 +17,9 @@ class MarginItemDecoration(
         state: RecyclerView.State
     ) {
 
-        if (parent.adapter != null) {
-            if (parent.getChildAdapterPosition(view) == parent.adapter!!.itemCount - 1) {
+        val adapter = parent.adapter
+        if (adapter != null) {
+            if (parent.getChildAdapterPosition(view) == adapter.itemCount - 1) {
                 return
             }
 

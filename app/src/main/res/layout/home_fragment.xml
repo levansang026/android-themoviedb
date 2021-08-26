@@ -23,6 +23,7 @@
             app:movieLists="@{viewModel.movieLists}"
             android:paddingVertical="16dp"
             android:clipToPadding="false"
+            android:clipChildren="false"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
