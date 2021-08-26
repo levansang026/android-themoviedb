@@ -34,7 +34,7 @@ class BackdropMoviesAdapter: ListAdapter<Movie, BackdropMoviesAdapter.BackdropMo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BackdropMovieHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return BackdropMovieHolder(MovieBackdropItemBinding.inflate(inflater))
+        return BackdropMovieHolder(MovieBackdropItemBinding.inflate(inflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: BackdropMovieHolder, position: Int) {

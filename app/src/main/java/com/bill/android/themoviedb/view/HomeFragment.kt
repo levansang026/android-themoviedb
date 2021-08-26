@@ -27,8 +27,11 @@ class HomeFragment: Fragment() {
         val binding = HomeFragmentBinding.inflate(inflater)
         binding.apply {
             lifecycleOwner = this@HomeFragment
-            binding.viewModel = this@HomeFragment.viewModel
-            binding.homeList.adapter = MovieFeedAdapter()
+            viewModel = this@HomeFragment.viewModel
+            homeList.adapter = MovieFeedAdapter()
+            homeList.addItemDecoration(
+                MarginItemDecoration(50)
+            )
         }
         return binding.root
     }

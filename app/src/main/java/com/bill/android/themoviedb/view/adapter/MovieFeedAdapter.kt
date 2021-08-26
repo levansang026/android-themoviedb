@@ -3,6 +3,7 @@ package com.bill.android.themoviedb.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.bill.android.themoviedb.databinding.MovieBackdropListItemBinding
 import com.bill.android.themoviedb.databinding.MoviePosterListItemBinding
 import com.bill.android.themoviedb.model.Movie
 import com.bill.android.themoviedb.model.MovieList
+import com.bill.android.themoviedb.view.MarginItemDecoration
 
 class MovieFeedAdapter: ListAdapter<MovieList, RecyclerView.ViewHolder>(DiffCallBack) {
 
@@ -41,6 +43,7 @@ class MovieFeedAdapter: ListAdapter<MovieList, RecyclerView.ViewHolder>(DiffCall
             binding.listName = item.name
             binding.movies = item.movies
             binding.list.adapter = BackdropMoviesAdapter()
+            binding.list.addItemDecoration(MarginItemDecoration(30, LinearLayout.HORIZONTAL))
             binding.executePendingBindings()
         }
     }
@@ -53,6 +56,7 @@ class MovieFeedAdapter: ListAdapter<MovieList, RecyclerView.ViewHolder>(DiffCall
             binding.listName = item.name
             binding.movies = item.movies
             binding.list.adapter = PosterMoviesAdapter()
+            binding.list.addItemDecoration(MarginItemDecoration(30, LinearLayout.HORIZONTAL))
             binding.executePendingBindings()
         }
     }
@@ -61,11 +65,11 @@ class MovieFeedAdapter: ListAdapter<MovieList, RecyclerView.ViewHolder>(DiffCall
         val layoutInflater = LayoutInflater.from(parent.context)
         return when (viewType) {
             POSTERTYPE -> {
-                PosterListViewHolder(MoviePosterListItemBinding.inflate(layoutInflater))
+                PosterListViewHolder(MoviePosterListItemBinding.inflate(layoutInflater, parent, false))
             }
 
             else ->  {
-                BackdropListViewHolder(MovieBackdropListItemBinding.inflate(layoutInflater))
+                BackdropListViewHolder(MovieBackdropListItemBinding.inflate(layoutInflater, parent, false))
             }
         }
     }

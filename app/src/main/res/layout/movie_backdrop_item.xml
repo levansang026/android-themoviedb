@@ -4,38 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="movie"
-            type="com.bill.android.themoviedb.model.Movie"
-            />
+            type="com.bill.android.themoviedb.model.Movie" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="vertical"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        >
 
-        <ImageView
-            android:id="@+id/imageView"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/design_default_color_on_secondary"
+            app:layout_constraintBottom_toTopOf="@id/textView"
             app:layout_constraintDimensionRatio="W, 16:9"
-            tools:src="@tools:sample/avatars"
-            android:src="@color/teal_700"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="30dp"
+            android:clipToPadding="false"
+            >
 
-<!--        <TextView-->
-<!--            android:id="@+id/textView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@{movie.title}"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            />-->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageUrl="@{movie.backdropUrl}"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{movie.title}"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintEnd_toEndOf="@id/cardView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:lines="1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

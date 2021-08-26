@@ -17,8 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1E304E"
-        android:paddingHorizontal="16dp">
+        >
 
         <TextView
             android:id="@+id/title"
@@ -29,21 +28,23 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="16dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
             android:layout_width="0dp"
             android:layout_height="306dp"
             android:layout_marginTop="12dp"
-            android:background="@color/teal_700"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:posterMovieList="@{movies}"
-            tools:listitem="@layout/movie_poster_item" />
+            tools:listitem="@layout/movie_poster_item"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

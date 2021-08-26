@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 import java.net.URL
 
 data class MovieResponse(
-    @SerializedName("results") val results: List<Movie>
-    )
+    val results: List<Movie>
+)
 
 data class Movie(
     val id: String,
@@ -14,6 +14,9 @@ data class Movie(
     @SerializedName("poster_path") val posterPath: String?,
 ) {
 
-    val backdropUrl = "https://image.tmdb.org/t/p/w500${backdropPath}"
-    val posterUrl  = "https://image.tmdb.org/t/p/w500${posterPath}"
+    val backdropUrl: String
+        get() = "https://image.tmdb.org/t/p/w500${backdropPath}"
+
+    val posterUrl: String
+        get() = "https://image.tmdb.org/t/p/w500${posterPath}"
 }

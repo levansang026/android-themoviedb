@@ -36,7 +36,7 @@ class MovieFeedViewModel(private val repository: MoviesRepository): ViewModel() 
                 result.data?.let { response ->
                     _movieLists.value?.let { current ->
                         val list = listOf(
-                            MovieList(MovieListType.NOWPLAYING, "Now Playing", response.take(1)),
+                            MovieList(MovieListType.NOWPLAYING, "Now Playing", response),
                             current.elementAt(1),
                             current.elementAt(2),
                             current.elementAt(3)

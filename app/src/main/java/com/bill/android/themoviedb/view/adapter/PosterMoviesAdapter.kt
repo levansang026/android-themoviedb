@@ -34,7 +34,7 @@ class PosterMoviesAdapter: ListAdapter<Movie, PosterMoviesAdapter.PosterMovieHol
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PosterMovieHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return PosterMovieHolder(MoviePosterItemBinding.inflate(inflater))
+        return PosterMovieHolder(MoviePosterItemBinding.inflate(inflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: PosterMovieHolder, position: Int) {

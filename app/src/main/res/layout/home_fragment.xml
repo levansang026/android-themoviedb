@@ -21,7 +21,8 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:movieLists="@{viewModel.movieLists}"
-            android:background="#102E58"
+            android:paddingVertical="16dp"
+            android:clipToPadding="false"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
